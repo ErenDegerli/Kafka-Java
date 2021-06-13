@@ -1,6 +1,8 @@
-package com.task;
+package com.task.deserializers;
 
 import java.util.Map;
+
+import com.task.entity.Person;
 import org.apache.kafka.common.serialization.Deserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

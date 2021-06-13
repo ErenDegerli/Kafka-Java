@@ -1,4 +1,6 @@
-package com.task;
+package com.task.builders;
+
+import com.task.entity.Person;
 
 public class PersonBuilder {
 

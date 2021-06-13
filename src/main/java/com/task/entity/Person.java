@@ -1,4 +1,4 @@
-package com.task;
+package com.task.entity;
 import java.io.Serializable;
 import org.immutables.value.Value;
 
