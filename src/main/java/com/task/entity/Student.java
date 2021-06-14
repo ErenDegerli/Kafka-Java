@@ -1,8 +1,8 @@
 package com.task.entity;
-import java.io.Serializable;;
 
+import java.io.Serializable;
 
-public class Person implements Serializable {
+public class Student implements Serializable {
 
     private int id;
     private String name;

@@ -1,25 +1,24 @@
 package com.task.producer;
 
+import com.task.builders.StudentBuilder;
 import com.task.constants.KafkaConstants;
-import com.task.entity.Person;
-import com.task.builders.PersonBuilder;
+import com.task.entity.Student;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import java.util.concurrent.ExecutionException;
 
-public class PersonProducer extends ProducerBase<Person>{
+public class StudentProducer extends ProducerBase<Student>{
 
     @Override
     public void produce(String name, int count) {
-        Producer<Long, Person> producer = createProducer();
+        Producer<Long, Student> producer = createProducer();
 
         for (int index = 0; index < count; index++) {
 
-            Person person = new PersonBuilder().withId(index).withName(name + index).build();
+            Student student = new StudentBuilder().withId(index).withName(name + index).build();
 
-            final ProducerRecord<Long, Person> record = new ProducerRecord<Long, Person>(KafkaConstants.TOPIC_NAME,
-                    person);
+            final ProducerRecord<Long, Student> record = new ProducerRecord<Long, Student>(KafkaConstants.TOPIC_NAME, student);
             try {
                 RecordMetadata metadata = producer.send(record).get();
                 System.out.println("Record sent with key " + index + " to partition " + metadata.partition()
