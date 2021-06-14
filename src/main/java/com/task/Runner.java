@@ -8,10 +8,10 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        PersonProducer<Person> producer = new PersonProducer<>();
+        PersonProducer producer = new PersonProducer();
         producer.produce("Eren", 10);
 
-        PersonConsumer<Person> consumer = new PersonConsumer<>();
+        PersonConsumer consumer = new PersonConsumer();
         consumer.consume();
     }
 }

@@ -5,7 +5,7 @@ import com.task.entity.Person;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 
-public class PersonConsumer<T extends Person> extends ConsumerBase implements IConsumer<T> {
+public class PersonConsumer extends ConsumerBase<Person> {
 
     @Override
     public void consume() {

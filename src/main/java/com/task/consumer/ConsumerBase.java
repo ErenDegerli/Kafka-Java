@@ -10,9 +10,9 @@ import org.apache.kafka.common.serialization.LongDeserializer;
 import java.util.Collections;
 import java.util.Properties;
 
-public abstract class ConsumerBase {
+public abstract class ConsumerBase<T> implements IConsumer<T> {
 
-    public Consumer<Long, Person> createConsumer() {
+    public Consumer<Long, T> createConsumer() {
         Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConstants.KAFKA_BROKERS);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, KafkaConstants.GROUP_ID_CONFIG);
@@ -22,7 +22,7 @@ public abstract class ConsumerBase {
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, KafkaConstants.OFFSET_RESET_EARLIER);
 
-        Consumer<Long, Person> consumer = new KafkaConsumer<>(props);
+        Consumer<Long, T> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Collections.singletonList(KafkaConstants.TOPIC_NAME));
         return consumer;
     }

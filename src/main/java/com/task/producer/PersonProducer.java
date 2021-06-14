@@ -8,7 +8,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import java.util.concurrent.ExecutionException;
 
-public class PersonProducer<T extends Person> extends ProducerBase implements IProducer<T>{
+public class PersonProducer extends ProducerBase<Person>{
 
     @Override
     public void produce(String name, int count) {

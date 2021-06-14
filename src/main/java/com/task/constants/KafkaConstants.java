@@ -4,7 +4,7 @@ public final class KafkaConstants {
 
         public static final String KAFKA_BROKERS = "localhost:9092";
 
-        public static final String TOPIC_NAME="demo";
+        public static final String TOPIC_NAME="demo3";
 
         public static final String GROUP_ID_CONFIG="consumerGroup1";
 
